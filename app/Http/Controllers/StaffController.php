@@ -56,7 +56,7 @@ class StaffController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'staff_name' => 'required|max:255',
-            'email' => 'required',
+            'email' => 'required|unique:staff',
             'password' => 'required',
         ]);
         if ($validator->fails()) {
