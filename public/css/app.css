@@ -5594,3 +5594,18 @@ textarea.form-control:active {
             appearance: none;
 }
 
+.page-nate {
+    height: 180px;
+    padding: 20px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+svg, .w-5 {
+    width: 30px;
+}
+.page-nate p {
+    padding-top: 12px;
+}
+
