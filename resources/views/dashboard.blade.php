@@ -52,7 +52,7 @@
           <li>
             <a href="./icons.html">
               <i class="now-ui-icons education_atom"></i>
-              <p>Icons</p>
+              <p>スタッフ</p>
             </a>
           </li>
           <li>
