@@ -168,8 +168,9 @@
                   <h5 class="title">スタッフ編集画面</h5>
                 </div>
                 <div class="card-body">
-                  <form method="POST" action="">
+                  <form method="POST" action="{{route('staffs.update', $staff->id)}}">
                     @csrf
+                    @method('PUT')
                     <div class="row">
                       <div class="col-md-5 pr-1">
                         <div class="form-group">
@@ -206,7 +207,7 @@
                     </div>
                     <div>
                         <a type="button" class="btn btn-secondary" href="{{route('staffs.index')}}">キャンセル</a>
-                        <button class="btn btn-outline-primary" type="submit">保存</button>
+                        <button class="btn btn-outline-primary" type="submit">更新</button>
                     </div>
                   </form>
                 </div>

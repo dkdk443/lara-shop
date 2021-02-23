@@ -52,9 +52,24 @@ class StaffController extends Controller
         return view('staffs.edit',['staff' => $staff]);
     }
 
-    public function update(Type $var = null)
+    public function update(Request $request, $id)
     {
-        # code...
+        $validator = Validator::make($request->all(), [
+            'staff_name' => 'required|max:255',
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+        if ($validator->fails()) {
+            return redirect('staffs/'.$id.'/edit')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+        $staff = Staff::find($id);
+        $staff->staff_name = $request->staff_name;
+        $staff->email = $request->email;
+        $staff->password = $request->password;
+        $staff->save();
+        return redirect('/staffs');
     }
 
 
