@@ -34,7 +34,7 @@
                         {{ $product->id }}
                       </td>
                       <td>
-                        {{ $product->product_name }}
+                       <a href="{{route('products.show', $product->id)}}"> {{ $product->product_name }}</a>
                       </td>
                       <td>
                         {{ $product->detail }}
