@@ -161,48 +161,7 @@
         <canvas id="bigDashboardChart"></canvas>
       </div>
       <div class="content">
-        <div class="row">
-            <div class="col-md-12">
-              <div class="card">
-                <div class="card-header">
-                  <h4 class="card-title"> スタッフ一覧 <i class="fas fa-plus-circle"></i></h4>
-                </div>
-                <div class="card-body">
-                  <div class="table-responsive">
-                    <table class="table">
-                      <thead class=" text-primary">
-                        <th>
-                          ID
-                        </th>
-                        <th>
-                          名前
-                        </th>
-                        <th>
-
-                        </th>
-                      </thead>
-                      <tbody>
-                        @foreach ($staffs as $staff)
-                        <tr>
-                          <td>
-                            {{ $staff->id }}
-                          </td>
-                          <td>
-                            {{ $staff->staff_name}}
-                          </td>
-                          <td>
-                              <span><i class="far fa-edit fa-lg"></i></span>
-                              <span><i class="fas fa-trash-alt fa-lg"></i></span>
-                          </td>
-                        </tr>
-                        @endforeach
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          
       </div>
       <footer class="footer">
         <div class=" container-fluid ">
