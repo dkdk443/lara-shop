@@ -28,7 +28,7 @@
                   <div class="col-md-12">
                     <div class="form-group">
                         <label>金額</label>
-                        <input type="email" class="form-control" placeholder="" value="" name="price">
+                        <input class="form-control" placeholder="" value="" name="price">
                     </div>
 
                   </div>
