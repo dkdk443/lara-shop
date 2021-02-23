@@ -54,9 +54,10 @@ class StaffController extends Controller
 
     public function update(Request $request, $id)
     {
+        $staff = Staff::find($id);
         $validator = Validator::make($request->all(), [
             'staff_name' => 'required|max:255',
-            'email' => 'required|unique:staff',
+            'email' => 'required|unique:staff,email,'.$staff->email.',email',
             'password' => 'required',
         ]);
         if ($validator->fails()) {
@@ -64,7 +65,6 @@ class StaffController extends Controller
                         ->withErrors($validator)
                         ->withInput();
         }
-        $staff = Staff::find($id);
         $staff->staff_name = $request->staff_name;
         $staff->email = $request->email;
         $staff->password = $request->password;
