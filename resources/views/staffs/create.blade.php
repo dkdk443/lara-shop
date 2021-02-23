@@ -190,6 +190,20 @@
                         </div>
                       </div>
                     </div>
+
+                    <div>
+                    @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                        {{-- <button type="button" aria-hidden="true" class="close">
+                          <i class="now-ui-icons ui-1_simple-remove"></i>
+                        </button> --}}
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </div>
+                    @endif
+
+                    </div>
                     <div>
                         <button type="button" class="btn btn-secondary">キャンセル</button>
                         <button class="btn btn-outline-primary" type="submit">保存</button>

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Staff;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+
 
 class StaffController extends Controller
 {
@@ -22,6 +24,17 @@ class StaffController extends Controller
 
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'staff_name' => 'required|max:255',
+            'email' => 'required|unique:staff',
+            'password' => 'required',
+        ]);
+        if ($validator->fails()) {
+            return redirect('staffs/create')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+
         $staff = new Staff();
 
         $staff::create([
