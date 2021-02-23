@@ -46,6 +46,17 @@ class StaffController extends Controller
 
     }
 
+    public function edit($id)
+    {
+        $staff = Staff::find($id);
+        return view('staffs.edit',['staff' => $staff]);
+    }
+
+    public function update(Type $var = null)
+    {
+        # code...
+    }
+
 
 }
 

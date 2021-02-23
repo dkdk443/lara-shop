@@ -197,8 +197,8 @@
                             {{ $staff->email }}
                           </td>
                           <td>
-                              <span><i class="far fa-edit fa-lg"></i></span>
-                              <span><i class="fas fa-trash-alt fa-lg"></i></span>
+                              <a href="{{route('staffs.edit', $staff->id)}}"><span><i class="far fa-edit fa-lg"></i></span></a>
+                              <a><span><i class="fas fa-trash-alt fa-lg"></i></span></a>
                           </td>
                         </tr>
                         @endforeach
