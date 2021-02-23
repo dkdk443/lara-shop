@@ -39,7 +39,7 @@
                     </div>
                   </div>
                 </div>
-                <button type="button" name="" id="" class="btn btn-primary" btn-lg btn-block">編集</button>
+                <a type="button" name="" id="" class="btn btn-primary" btn-lg btn-block" href="{{route('products.edit', $product->id)}}">編集</a>
             </div>
 
           </div>

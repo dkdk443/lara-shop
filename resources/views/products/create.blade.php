@@ -8,7 +8,7 @@
               <h5 class="title">商品登録画面</h5>
             </div>
             <div class="card-body">
-              <form method="POST" action="/products">
+              <form method="POST" action="/products" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
                   <div class="col-md-6 pr-1">
@@ -41,9 +41,6 @@
                 <div>
                 @if (count($errors) > 0)
                 <div class="alert alert-danger">
-                    {{-- <button type="button" aria-hidden="true" class="close">
-                      <i class="now-ui-icons ui-1_simple-remove"></i>
-                    </button> --}}
                     @foreach ($errors->all() as $error)
                     <li>{{ $error }}</li>
                 @endforeach
