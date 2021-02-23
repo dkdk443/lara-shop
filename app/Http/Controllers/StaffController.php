@@ -72,6 +72,13 @@ class StaffController extends Controller
         return redirect('/staffs');
     }
 
+    public function destroy($id)
+    {
+        $staff = Staff::find($id);
+        $staff->delete();
+        return redirect(route('staffs.index'));
+    }
+
 
 }
 

@@ -198,7 +198,13 @@
                           </td>
                           <td>
                               <a href="{{route('staffs.edit', $staff->id)}}"><span><i class="far fa-edit fa-lg"></i></span></a>
-                              <a><span><i class="fas fa-trash-alt fa-lg"></i></span></a>
+                              <form action="{{route('staffs.destroy', $staff->id)}}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit">
+                                    <i class="fas fa-trash-alt fa-lg"></i>
+                                </button>
+                              </form>
                           </td>
                         </tr>
                         @endforeach
