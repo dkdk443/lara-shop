@@ -161,7 +161,44 @@
         <canvas id="bigDashboardChart"></canvas>
       </div>
       <div class="content">
-          
+        <div class="row">
+            <div class="col-md-8">
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="title">スタッフ登録画面</h5>
+                </div>
+                <div class="card-body">
+                  <form method="POST" action="/staffs">
+                    @csrf
+                    <div class="row">
+                      <div class="col-md-5 pr-1">
+                        <div class="form-group">
+                          <label>名前</label>
+                          <input type="text" class="form-control" placeholder="田中 太郎" value="" name="staff_name">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                            <label>メールアドレス</label>
+                            <input type="email" class="form-control" placeholder="" value="" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label>パスワード</label>
+                            <input type="password" class="form-control" placeholder="" value="" name="password">
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-secondary">キャンセル</button>
+                        <button class="btn btn-outline-primary" type="submit">保存</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
       </div>
       <footer class="footer">
         <div class=" container-fluid ">

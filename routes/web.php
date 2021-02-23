@@ -17,4 +17,4 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
-Route::get('/staffs','App\Http\Controllers\StaffController@index');
+Route::resource('staffs', 'App\Http\Controllers\StaffController');

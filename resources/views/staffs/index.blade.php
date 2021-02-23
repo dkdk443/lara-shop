@@ -165,7 +165,7 @@
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header">
-                  <h4 class="card-title"> スタッフ一覧 <i class="fas fa-plus-circle"></i></h4>
+                  <h4 class="card-title"> スタッフ一覧 　<a href="/staffs/create"><i class="fas fa-plus-circle"></i></a></h4>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
@@ -175,7 +175,10 @@
                           ID
                         </th>
                         <th>
-                          名前
+                            名前
+                        </th>
+                        <th>
+                            メールアドレス
                         </th>
                         <th>
 
@@ -188,7 +191,10 @@
                             {{ $staff->id }}
                           </td>
                           <td>
-                            {{ $staff->staff_name}}
+                            {{ $staff->staff_name }}
+                          </td>
+                          <td>
+                            {{ $staff->email }}
                           </td>
                           <td>
                               <span><i class="far fa-edit fa-lg"></i></span>

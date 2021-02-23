@@ -15,6 +15,24 @@ class StaffController extends Controller
         ]);
     }
 
+    public function create()
+    {
+       return view('staffs.create');
+    }
+
+    public function store(Request $request)
+    {
+        $staff = new Staff();
+
+        $staff::create([
+            'staff_name' => $request->staff_name,
+            'email' => $request->email,
+            'password' => $request->password
+        ]);
+        return redirect('/staffs');
+
+    }
+
 
 }
 
