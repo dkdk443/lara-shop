@@ -17,4 +17,5 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
-Route::resource('staffs', 'App\Http\Controllers\StaffController')->except(['show']);;
+Route::resource('staffs', 'App\Http\Controllers\StaffController')->except(['show']);
+Route::resource('products', 'App\Http\Controllers\ProductController');
