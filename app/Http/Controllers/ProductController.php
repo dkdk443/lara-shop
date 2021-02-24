@@ -33,7 +33,7 @@ class ProductController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'product_name' => 'required|max:255',
-            'detail' => 'required|unique:staff',
+            'detail' => 'required|unique:products',
             'price' => 'required|digits:8',
             'image_url' => 'required',
         ]);
@@ -62,6 +62,17 @@ class ProductController extends Controller
 
     public function update(Request $request, $id)
     {
+        $validator = Validator::make($request->all(), [
+            'product_name' => 'required|max:255',
+            'detail' => 'required|unique:products',
+            'price' => 'required|digits:8',
+            'image_url' => 'required',
+        ]);
+        if ($validator->fails()) {
+            return redirect('products/create')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
         $product = product::find($id);
         $product->product_name = $request->product_name;
         $product->detail = $request->detail;
