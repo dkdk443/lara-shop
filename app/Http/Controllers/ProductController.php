@@ -31,6 +31,17 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'product_name' => 'required|max:255',
+            'detail' => 'required|unique:staff',
+            'price' => 'required|digits:8',
+            'image_url' => 'required',
+        ]);
+        if ($validator->fails()) {
+            return redirect('products/create')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
         $product = new Product();
         $product::create([
             'product_name' => $request->product_name,
