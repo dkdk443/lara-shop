@@ -17,5 +17,11 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
-Route::resource('staffs', 'App\Http\Controllers\StaffController')->except(['show']);
-Route::resource('products', 'App\Http\Controllers\ProductController');
+Route::resource('staffs', 'App\Http\Controllers\StaffController')->except(['show'])->middleware('auth');
+Route::resource('products', 'App\Http\Controllers\ProductController')->middleware('auth');
+
+Auth::routes();
+
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

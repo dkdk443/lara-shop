@@ -14,9 +14,7 @@
 
 <!-- CSRF Token -->
 <meta name="csrf-token" content="{{ csrf_token() }}">
-
 <title>{{ config('app.name', 'Laravel') }}</title>
-
 <script src="{{ mix('js/app.js') }}" defer></script>
 
 <!-- Fonts -->
@@ -27,17 +25,13 @@
 <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 
-<body class="">
+<body class="" id="app">
   <div class="wrapper ">
     @section('sidebar')
-
 <div class="sidebar" data-color="orange">
     <div class="logo">
-          <a href="" class="simple-text logo-mini">
+          <a href="/" class="simple-text logo-mini">
             TOP
-          </a>
-          <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-            Creative Tim
           </a>
         </div>
         <div class="sidebar-wrapper" id="sidebar-wrapper">
@@ -121,7 +115,7 @@
                 <input type="text" value="" class="form-control" placeholder="Search...">
                 <div class="input-group-append">
                   <div class="input-group-text">
-                    <i class="now-ui-icons ui-1_zoom-bold"></i>
+                    <i class="fas fa-search"></i>
                   </div>
                 </div>
               </div>
@@ -149,12 +143,37 @@
                 </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#pablo">
-                  <i class="now-ui-icons users_single-02"></i>
-                  <p>
+                @auth
+                    <a class="nav-link" href="#pablo">
+                    <i class="far fa-user fa-2x"></i>
+                    <p>kana</p>
+                    <p>
                     <span class="d-lg-none d-md-block">Account</span>
-                  </p>
-                </a>
+                    </p>
+                    </a>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                          Dropdown button
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <li><a class="dropdown-item" href="#">Action</a></li>
+                          <li><a class="dropdown-item" href="#">Another action</a></li>
+                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                      </div>
+                    {{-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                           {{ __('Logout') }}
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </div> --}}
+                @else
+                    <button type="button" class="btn btn-primary">新規登録</button>
+                    <button type="button" class="btn btn-outline-secondary">ログイン</button>
+                @endauth
+
               </li>
             </ul>
           </div>
@@ -202,25 +221,19 @@
     </div>
   </div>
   <!--   Core JS Files   -->
-  <script src="../assets/js/core/jquery.min.js"></script>
-  <script src="../assets/js/core/popper.min.js"></script>
-  <script src="../assets/js/core/bootstrap.min.js"></script>
-  <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
   <!--  Google Maps Plugin    -->
   <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
   <!-- Chart JS -->
-  <script src="../assets/js/plugins/chartjs.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
   <!--  Notifications Plugin    -->
-  <script src="../assets/js/plugins/bootstrap-notify.js"></script>
   <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="../assets/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script><!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
-  <script src="../assets/demo/demo.js"></script>
   <script>
-    $(document).ready(function() {
-      // Javascript method's body can be found in assets/js/demos.js
-      demo.initDashboardPageCharts();
+    // $(document).ready(function() {
+    //   // Javascript method's body can be found in assets/js/demos.js
+    //   demo.initDashboardPageCharts();
 
-    });
+    // });
   </script>
 </body>
 
