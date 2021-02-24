@@ -14,27 +14,27 @@
                   <div class="col-md-6 pr-1">
                     <div class="form-group">
                       <label>商品名</label>
-                      <input type="text" class="form-control" placeholder="" value="" name="product_name">
+                      <input type="text" class="form-control" placeholder="" value="{{old('product_name')}}" name="product_name">
                     </div>
                     <div class="form-group">
                   </div>
                 </div>
                 <div class="col-md-12">
                     <label for="exampleFormControlTextarea1" class="form-label">商品説明</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="detail"></textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="detail">{{old('detail')}}</textarea>
                     </div>
                 </div>
                 <div class="row">
                   <div class="col-md-12">
                     <div class="form-group">
                         <label>金額</label>
-                        <input class="form-control" placeholder="" value="" name="price">
+                        <input class="form-control" placeholder="" value="{{ old('price') }}" name="price">
                     </div>
 
                   </div>
                   <div class="col-md-12">
                     <label for="formFile" class="form-label">商品画像</label>
-                    <input class="form-control" type="file" id="formFile" name="image_url">
+                    <input class="form-control" type="file" id="formFile" name="image_url" value="{{ old('image_url') }}">
                   </div>
                 </div>
 

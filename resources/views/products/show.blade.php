@@ -49,16 +49,11 @@
 
 
         <div class="col-md-4">
-          <div class="card card-user">
-            <div class="image">
-              <img src="/resources/img/apple-icon.png">
-            </div>
+          <div class="card">
             <div class="card-body">
-              <div class="author">
-                <a href="#">
-                  <img class="avatar border-gray" src="../assets/img/mike.jpg" alt="...">
-                  <h5 class="title">Mike Andrew</h5>
-                </a>
+              <div class="product">
+                <img src="/uploads/{{ $product->image_url }}">
+                <h5 class="title">{{ $product->product_name }}</h5>
               </div>
             </div>
             <hr>

@@ -33,21 +33,29 @@ class ProductController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'product_name' => 'required|max:255',
-            'detail' => 'required|unique:products',
-            'price' => 'required|digits:8',
-            'image_url' => 'required',
+            'detail' => 'required',
+            'price' => 'required|digits_between:1,8',
+            'image_url' => 'required|image',
         ]);
         if ($validator->fails()) {
             return redirect('products/create')
                         ->withErrors($validator)
                         ->withInput();
         }
+
+        if ($image = $request->image_url) {
+            $image_name = time().'.'.$image->guessExtension();
+            $target_path = public_path('/uploads/');
+            $image->move($target_path,$image_name);
+        } else {
+            $name = "";
+        }
         $product = new Product();
         $product::create([
             'product_name' => $request->product_name,
             'detail' => $request->detail,
             'price' => $request->price,
-            'image_url' => $request->image_url
+            'image_url' => $image_name
         ]);
         return redirect('/products');
     }
@@ -64,20 +72,27 @@ class ProductController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'product_name' => 'required|max:255',
-            'detail' => 'required|unique:products',
-            'price' => 'required|digits:8',
-            'image_url' => 'required',
+            'detail' => 'required',
+            'price' => 'required|digits_between:1,8',
+            'image_url' => 'required|image',
         ]);
         if ($validator->fails()) {
-            return redirect('products/create')
+            return redirect('products/'.$id.'/edit')
                         ->withErrors($validator)
                         ->withInput();
+        }
+        if ($image = $request->image_url) {
+            $image_name = time().'.'.$image->guessExtension();
+            $target_path = public_path('/uploads/');
+            $image->move($target_path,$image_name);
+        } else {
+            $name = "";
         }
         $product = product::find($id);
         $product->product_name = $request->product_name;
         $product->detail = $request->detail;
         $product->price = $request->price;
-        $product->image_url = $request->image_url;
+        $product->image_url = $image_name;
         $product->save();
         return redirect('/products');
     }
