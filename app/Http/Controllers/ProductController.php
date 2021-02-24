@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
 {
@@ -48,9 +49,15 @@ class ProductController extends Controller
         ]);
     }
 
-    public function update()
+    public function update(Request $request, $id)
     {
-        # code...
+        $product = product::find($id);
+        $product->product_name = $request->product_name;
+        $product->detail = $request->detail;
+        $product->price = $request->price;
+        $product->image_url = $request->image_url;
+        $product->save();
+        return redirect('/products');
     }
 
     public function destroy()

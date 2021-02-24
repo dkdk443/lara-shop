@@ -8,7 +8,7 @@
               <h5 class="title">商品編集画面</h5>
             </div>
             <div class="card-body">
-              <form method="POST" action="{{route('products.edit', $product->id)}}" enctype="multipart/form-data">
+              <form method="POST" action="{{route('products.update', $product->id)}}" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="row">
