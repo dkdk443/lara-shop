@@ -45,9 +45,6 @@
           </div>
 
         </div>
-
-
-
         <div class="col-md-4">
           <div class="card">
             <div class="card-body">
@@ -57,7 +54,7 @@
               </div>
             </div>
             <hr>
-            <div class="button-container">
+            {{-- <div class="button-container">
               <button href="#" class="btn btn-neutral btn-icon btn-round btn-lg">
                 <i class="fab fa-facebook-f"></i>
               </button>
@@ -67,7 +64,7 @@
               <button href="#" class="btn btn-neutral btn-icon btn-round btn-lg">
                 <i class="fab fa-google-plus-g"></i>
               </button>
-            </div>
+            </div> --}}
           </div>
         </div>
       </div>

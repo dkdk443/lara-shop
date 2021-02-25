@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard');
-});
+Route::get('/', 'App\Http\Controllers\ShopController@index');
 
 Route::resource('staffs', 'App\Http\Controllers\StaffController')->except(['show'])->middleware('auth');
 Route::resource('products', 'App\Http\Controllers\ProductController')->middleware('auth');

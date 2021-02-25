@@ -38,52 +38,52 @@
           <ul class="nav">
             <li class="active ">
               <a href="/">
-                <i class="now-ui-icons design_app"></i>
+                <i class="fas fa-chart-line"></i>
                 <p>Dashboard</p>
               </a>
             </li>
             <li>
+              <a href="{{route('products.index')}}">
+                <i class="fas fa-apple-alt"></i>
+                <p>商品管理</p>
+              </a>
+            </li>
+            <li>
               <a href="{{route('staffs.index')}}">
-                <i class="now-ui-icons education_atom"></i>
+                <i class="fas fa-users"></i>
                 <p>スタッフ</p>
               </a>
             </li>
-            <li>
-              <a href="{{route('products.index')}}">
-                <i class="now-ui-icons location_map-big"></i>
-                <p>商品</p>
-              </a>
-            </li>
-            <li>
+            {{-- <li>
               <a href="./notifications.html">
                 <i class="now-ui-icons ui-1_bell-53"></i>
                 <p>Notifications</p>
               </a>
-            </li>
-            <li>
+            </li> --}}
+            {{-- <li>
               <a href="./user.html">
                 <i class="now-ui-icons users_single-02"></i>
                 <p>User Profile</p>
               </a>
-            </li>
-            <li>
+            </li> --}}
+            {{-- <li>
               <a href="./tables.html">
                 <i class="now-ui-icons design_bullet-list-67"></i>
                 <p>Table List</p>
               </a>
-            </li>
-            <li>
+            </li> --}}
+            {{-- <li>
               <a href="./typography.html">
                 <i class="now-ui-icons text_caps-small"></i>
                 <p>Typography</p>
               </a>
-            </li>
-            <li class="active-pro">
+            </li> --}}
+            {{-- <li class="active-pro">
               <a href="./upgrade.html">
                 <i class="now-ui-icons arrows-1_cloud-download-93"></i>
                 <p>Upgrade to PRO</p>
               </a>
-            </li>
+            </li> --}}
           </ul>
         </div>
       </div>
@@ -123,8 +123,7 @@
             <ul class="navbar-nav">
               <li class="nav-item">
                 <a class="nav-link" href="#pablo">
-                  <i class="now-ui-icons media-2_sound-wave"></i>
-                  <p>
+                    <i class="fas fa-shopping-cart fa-2x"></i>
                     <span class="d-lg-none d-md-block">Stats</span>
                   </p>
                 </a>
@@ -183,7 +182,7 @@
         <div class=" container-fluid ">
           <nav>
             <ul>
-              <li>
+              {{-- <li>
                 <a href="https://www.creative-tim.com">
                   Creative Tim
                 </a>
@@ -197,7 +196,7 @@
                 <a href="http://blog.creative-tim.com">
                   Blog
                 </a>
-              </li>
+              </li> --}}
             </ul>
           </nav>
           <div class="copyright" id="copyright">
