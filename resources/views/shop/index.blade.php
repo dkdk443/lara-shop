@@ -8,7 +8,7 @@
             <img src="/uploads/{{ $item->image_url }}" class="card-img-top">
             <div class="card-header">
               {{-- <h5 class="card-category">category</h5> --}}
-              <a href="#">
+              <a href="{{ route('shop.show', $item->id)}}">
               <h5 class="card-title">{{ $item->product_name }}</h5>
               </a>
             <div class="card-body">

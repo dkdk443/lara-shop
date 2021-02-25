@@ -158,8 +158,8 @@
                     @csrf
                     </form>
                 @else
-                    <button type="button" class="btn btn-primary">新規登録</button>
-                    <button type="button" class="btn btn-outline-secondary">ログイン</button>
+                    <a href="{{route('register')}}" type="button" class="btn btn-primary">新規登録</a>
+                    <a href="{{ route('login') }}" type="button" class="btn btn-outline-secondary">ログイン</a>
                 @endauth
 
               </li>

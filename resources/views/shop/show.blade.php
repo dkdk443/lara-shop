@@ -39,7 +39,7 @@
                     </div>
                   </div>
                 </div>
-                <a href="#" class="btn btn-primary">カートに入れる</a>
+                <a href="{{ route('shop.addCart', $item->id)}}" class="btn btn-primary">カートに入れる</a>
             </div>
 
           </div>
