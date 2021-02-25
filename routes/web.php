@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'App\Http\Controllers\ShopController@index');
+Route::get('items/{id}', 'App\Http\Controllers\ShopController@show');
 
 Route::resource('staffs', 'App\Http\Controllers\StaffController')->except(['show'])->middleware('auth');
 Route::resource('products', 'App\Http\Controllers\ProductController')->middleware('auth');

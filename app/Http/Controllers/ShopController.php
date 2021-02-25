@@ -14,4 +14,12 @@ class ShopController extends Controller
             'items' => $items
         ]);
     }
+
+    public function show($id)
+    {
+        $item = Product::find($id);
+        return view('shop.show', [
+            'item' => $item
+        ]);
+    }
 }
