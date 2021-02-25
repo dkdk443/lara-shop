@@ -34,7 +34,9 @@ class ShopController extends Controller
 
     public function cart()
     {
-         $cart = session()->all();
+        // $cart = session()->all();
+        $sessionAll = session()->all();
+        $cart = $sessionAll['item'];
         return view('shop.cart', [
             'cart' => $cart
         ]);

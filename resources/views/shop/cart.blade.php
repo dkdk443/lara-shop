@@ -2,21 +2,25 @@
 @section('content')
 <div class="content">
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-6">
           <div class="card">
             <div class="card-header">
               <h5 class="title">カート</h5>
             </div>
             <div class="card-body">
-                <div class="row">
-                    <ul>
-                        {{-- @foreach ($cart as $cartItem)
-                             <li>{{ $cartItem }}</li>
-                        @endforeach --}}
+                <ul class="list-group list-group-flush">
+                        @foreach ($cart as $cartItem)
+                            <div class="list-group-item">
+                                <div class="d-flex justify-content-between">
+                                    <div class="mb-1">{{ $cartItem->product_name }} </div><span>{{ $cartItem->price }}円</span>
+                                </div>
+                                <a href="#"><small>削除</small></a>
+                            </div>
+                        @endforeach
                     </ul>
-                </div>
+
                 <hr>
-                <a href="" class="btn btn-primary">購入に進む</a>
+
             </div>
 
           </div>
@@ -26,20 +30,15 @@
           <div class="card">
             <div class="card-body">
               <div class="product">
+                  合計金額
+
+                  3,900 円
               </div>
+
+              <a href="" class="btn btn-primary">購入に進む</a>
             </div>
             <hr>
-            {{-- <div class="button-container">
-              <button href="#" class="btn btn-neutral btn-icon btn-round btn-lg">
-                <i class="fab fa-facebook-f"></i>
-              </button>
-              <button href="#" class="btn btn-neutral btn-icon btn-round btn-lg">
-                <i class="fab fa-twitter"></i>
-              </button>
-              <button href="#" class="btn btn-neutral btn-icon btn-round btn-lg">
-                <i class="fab fa-google-plus-g"></i>
-              </button>
-            </div> --}}
+
           </div>
         </div>
       </div>
