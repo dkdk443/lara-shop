@@ -27,7 +27,7 @@ class ShopController extends Controller
     public function addCart($id)
     {
         $item = Product::find($id);
-        session()->push('item',$item);
+        session()->push('item', $item);
         return redirect(route('shop.cart'));
 
     }
@@ -39,26 +39,36 @@ class ShopController extends Controller
     public function cart()
     {
         $sessionAll = session()->all();
-        $cart = $sessionAll['item'];
-        if(!$cart) {
+        if (!empty($sessionAll['item'])) {
+            $cart = $sessionAll['item'];
+            //カートの合計金額
+
+            $i = 0;
+            foreach($cart as $item) {
+            $i += $item->price;
+            }
+            $sum = number_format($i);
+
+            //カートの点数
+            $count = count($cart);
+
+            return view('shop.cart', [
+                'cart' => $cart,
+                'sum' => $sum,
+                'count' => $count
+            ]);
+        } else {
             return view('shop.cart');
-        }
-        $cart = $sessionAll['item'];
-        //カートの合計金額
-        $i = 0;
-        foreach($cart as $item) {
-           $i += $item->price;
-        }
-        $sum = number_format($i);
 
-        //カートの点数
-        $count = count($cart);
+        }
 
-        return view('shop.cart', [
-            'cart' => $cart,
-            'sum' => $sum,
-            'count' => $count
-        ]);
+    }
+
+    public function flushCart(Request $request)
+    {
+        $request->session();
+        $request->session()->forget(['item']);
+        return redirect(route('shop.cart'));
     }
 
 //     public function calcTotalPrice()
