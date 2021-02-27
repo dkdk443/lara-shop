@@ -44,7 +44,7 @@
               </div>
             <div class="card-body">
               <div class="product">
-                @if(isset($catt))
+                @if(isset($cart))
                   <h4 class="price">{{ $sum }} 円</h4>
                   <h5>{{ $count }}点</h5>
                 @endif
