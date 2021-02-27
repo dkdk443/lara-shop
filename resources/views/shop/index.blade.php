@@ -17,7 +17,7 @@
             </div>
             <div class="card-footer">
               <div class="stats">
-                  <a href="#" class="btn btn-primary">カートに入れる</a>
+                  <a href="{{ route('shop.addCart', $item->id)}}" class="btn btn-primary">カートに入れる</a>
                 {{-- <i class="fas fa-heart"></i> --}}
                 {{-- <i class="far fa-heart"></i> --}}
               </div>

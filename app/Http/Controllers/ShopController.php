@@ -32,9 +32,17 @@ class ShopController extends Controller
 
     }
 
+    public function removeCart($id)
+    {
+    }
+
     public function cart()
     {
         $sessionAll = session()->all();
+        $cart = $sessionAll['item'];
+        if(!$cart) {
+            return view('shop.cart');
+        }
         $cart = $sessionAll['item'];
         //カートの合計金額
         $i = 0;

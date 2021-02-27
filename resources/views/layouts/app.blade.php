@@ -122,7 +122,7 @@
             </form>
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="#pablo">
+                <a class="nav-link" href="{{ route('shop.cart')}}">
                     <i class="fas fa-shopping-cart fa-2x"></i>
                     <span class="d-lg-none d-md-block">Stats</span>
                   </p>

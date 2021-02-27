@@ -13,9 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'App\Http\Controllers\ShopController@index');
+Route::get('/', 'App\Http\Controllers\ShopController@index')->name('top');
 Route::get('items/{id}', 'App\Http\Controllers\ShopController@show')->name('shop.show');
 Route::get('items/{id}/cart', 'App\Http\Controllers\ShopController@addCart')->name('shop.addCart');
+Route::put('items/{id}/cart', 'App\Http\Controllers\ShopController@removeCart')->name('shop.removeCart');
+
 Route::get('cart', 'App\Http\Controllers\ShopController@cart')->name('shop.cart');
 Route::resource('staffs', 'App\Http\Controllers\StaffController')->except(['show'])->middleware('auth');
 Route::resource('products', 'App\Http\Controllers\ProductController')->middleware('auth');

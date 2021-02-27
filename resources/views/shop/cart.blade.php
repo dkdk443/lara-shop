@@ -14,13 +14,17 @@
                                 <div class="d-flex justify-content-between">
                                     <h5 class="mb-1">{{ $cartItem->product_name }} </h5><span>{{ $cartItem->price }}円</span>
                                 </div>
-                                <a href="#"><small>削除</small></a>
+                                <form action="{{ route('shop.removeCart', $cartItem->id)}}" method="POST">
+                                    @method('PUT')
+                                    @csrf
+                                    <button type="submit">削除</button>
+                                </form>
                             </div>
                         @endforeach
                     </ul>
 
                 <hr>
-
+                <a href="{{route('top')}}" class="btn btn-primary">商品選択を続ける</a>
             </div>
 
           </div>
